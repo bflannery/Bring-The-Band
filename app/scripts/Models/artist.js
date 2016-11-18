@@ -7,8 +7,7 @@ export default Backbone.Model.extend({
 
   idAttribute: 'id',
     defaults: {
-    artist: ''
-
+    artists: {},
   },
 
 });

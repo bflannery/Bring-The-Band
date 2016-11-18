@@ -6,6 +6,7 @@ export default Backbone.Collection.extend ({
   model: Artist,
 
 getArtists(artist){
+    // console.log("this reference", this)
 $.ajax({
 
   type: 'GET',
@@ -15,7 +16,9 @@ $.ajax({
     type: 'artist'
   },
   success: (response) => {
-    console.log(response);
+    let artist = new Artist(response);
+    // console.log("this reference", this)
+    this.add(artist);
   }
 });
 }

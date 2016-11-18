@@ -6,7 +6,7 @@ import {Router, Route, hashHistory } from 'react-router';
 import config from './config';
 import App from './Components/Containers/App';
 import Signup from './Components/Signup';
-import Search from './Components/Search';
+import SearchPage from './Components/SearchPage';
 
 
 const router = (
@@ -14,7 +14,7 @@ const router = (
     <Router history={hashHistory}>
       <Route path='/' component={App}/>
       <Route path='/register' component={Signup}/>
-      <Route path='/search' component={Search}/>
+      <Route path='/search' component={SearchPage}/>
     </Router>
 
 );
