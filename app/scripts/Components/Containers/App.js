@@ -6,11 +6,11 @@ import Login from '../Login';
 export default React.createClass({
   getInitialState(){
     return {
-      session: store.session.toJSON()
+      session: store.session.toJSON(),
     }
   },
   componentWillMount(){
-    store.session.on('change', ( )=> {
+    store.session.on('change', ()=> {
       this.setState({session: store.session.toJSON()})
     });
   },
