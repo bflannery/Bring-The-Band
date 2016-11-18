@@ -38,7 +38,8 @@ describe('Session model', () => {
     expect(session.get('email')).to.equal('');
 
   });
-  it('should have a default password value of an empty string', () => {
-    expect(session.get('password')).to.equal('');
+  it('should have a default user-token value of an empty string', () => {
+    expect(session.get('user-token')).to.equal('');
   });
+
 });

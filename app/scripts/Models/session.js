@@ -4,11 +4,6 @@ import $ from 'jquery';
 
 export default Backbone.Model.extend({
 
-  initialize(){
-    if(window.localStorage.getItem('user-token')){
-      this.set('user-token' , window.localStorage.getItem('user-token'));
-    }
-  },
 
   idAttribute: 'objectId',
   defaults: {

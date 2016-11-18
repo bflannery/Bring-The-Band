@@ -17,6 +17,10 @@ $(document).ajaxSend((evt, xhr, opts) => {
     xhr.setRequestHeader('application-id', config.appId);
     xhr.setRequestHeader('secret-key', config.secretKey);
     xhr.setRequestHeader('application-type', 'REST');
+
+    if(window.localStorage.getItem('user-token')){
+      this.set('user-token' , window.localStorage.getItem('user-token'));
+    }
 });
 
 const router = (
