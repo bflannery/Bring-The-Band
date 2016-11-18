@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
-import session from '../store';
+import store from '../store';
+
 
 export default React.createClass({
     render() {
@@ -16,11 +17,13 @@ export default React.createClass({
         )
       } else {
         nav = (
+          <div>
           <nav>
-            <Link to = "votes">View Votes</Link>
-            <Link to = "search">Search Bands</Link>
-            <Link to = "/">Log Out</Link>
+            <Link to = "votes">Votes</Link>
+            <Link to = "search">Search</Link>
           </nav>
+          <input type="button" onClick={this.handleLogOut} value="log out"/>
+          </div>
         )
       }
         return (
@@ -28,6 +31,11 @@ export default React.createClass({
               {nav}
               {this.props.children}
           </div>
-      )
+      );
+    },
+
+    handleLogOut (e) {
+      e.preventDefault
+      store.session.logout();
     }
 });

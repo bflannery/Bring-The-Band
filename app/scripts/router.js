@@ -14,11 +14,11 @@ import Login from './Components/Login';
 const router = (
 
     <Router history={hashHistory}>
-      <Route path='/' component={Nav}/>
+      <Route path='/' component={Nav}>
       <Route path='/login' component={Login}/>
       <Route path='/register' component={Signup}/>
-      <Route path='/search' component={Nav}
-      />
+      <Route path='/search' component={SearchPage}/>
+      </Route>
     </Router>
 
 );

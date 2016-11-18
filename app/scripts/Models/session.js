@@ -5,7 +5,11 @@ import config from '../config';
 
 export default Backbone.Model.extend({
 
-
+  initialize() {
+         if (window.localStorage.getItem('user-token')) {
+             this.set('user-token', window.localStorage.getItem('user-token'));
+         }
+},
   idAttribute: 'objectId',
   defaults: {
     userName:'',
@@ -65,6 +69,7 @@ export default Backbone.Model.extend({
         'secret-key': config.secretKey,
         'application-type': 'REST'
       },
+      contentType:'application/json',
       url:'https://api.backendless.com/v1/users/logout',
       success:()=>{
         this.clear();
