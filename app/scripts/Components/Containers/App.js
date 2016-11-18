@@ -10,15 +10,16 @@ export default React.createClass({
     }
   },
   componentWillMount(){
-    store.session.on('change', ()=> {
+    store.session.on('change', ( )=> {
       this.setState({session: store.session.toJSON()})
     });
   },
   render(){
+    console.log('hello');
       return (
         <div>
-          <h1>Bring The Band!</h1>
-          <Login login={this.state.session}/>
+        <h1>Bring The Band!</h1>
+        <Login login={this.state.session}/>
         </div>
       );
   }

@@ -1,7 +1,14 @@
 import {hashHistory} from 'react-router';
 import Backbone from 'backbone';
+import $ from 'jquery';
 
 export default Backbone.Model.extend({
+
+  initialize(){
+    if(window.localStorage.getItem('user-token')){
+      this.set('user-token' , window.localStorage.getItem('user-token'));
+    }
+  },
 
   idAttribute: 'objectId',
   defaults: {
@@ -11,25 +18,48 @@ export default Backbone.Model.extend({
 
   },
 
-  signup(username, email, password){
-    this.save({username, email, password},
-      {url: 'https://api.backendless.com/v1/users/register',
+  validatePassword(password,confirmPassword){
+    if(password === confirmPassword)return true;
+    return false;
+  },
+
+
+  register(userName, email, password){
+    $.ajax({
+      type: 'POST',
+      url: 'https://api.backendless.com/v1/users/register',
+      contentType: 'application/json',
+      data: JSON.stringify({userName, email, password}),
       success: () => {
-        this.login(email, password);
+        this.login(userName, password);
       }
     });
   },
-  login(login, password){
-    this.save(
-      {login, password},
-      {
-        url: 'https://api.backendless.com/v1/users/login',
-        success: () => {
-          this.set({login, password});
-          hashHistory.push('/search');
-        }
-      }
-    );
-  }
 
-  });
+
+  login(userName, password){
+    $.ajax({
+      type:'POST',
+      url:'https://api.backendless.com/v1/users/login',
+      contentType:'application/json',
+      data:JSON.stringify({login: userName , password}),
+      success:(response)=>{
+        this.set(response);
+        window.localStorage.setItem('user-token',response['user-token']);
+        window.localStorage.setItem('userName',response['userName']);
+        hashHistory.push('/search');
+      }
+    });
+  },
+
+  logout(){
+    $.ajax({
+      url:'https://api.backendless.com/v1/users/logout',
+      success:()=>{
+        this.clear();
+        window.localStorage.clear();
+        hashHistory.push('/');
+      }
+    })
+  }
+});
