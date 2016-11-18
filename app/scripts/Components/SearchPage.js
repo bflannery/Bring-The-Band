@@ -10,7 +10,7 @@ export default React.createClass({
       artists: [{artists:{items: []}}]
     }
   },
-  componentWillMount(){
+  componentDidMount(){
     store.session.on('change update', ()=> {
 
     });

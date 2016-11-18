@@ -1,7 +1,8 @@
 import Backbone from 'backbone';
 import $ from 'jquery';
 import Artist from '../Models/artist';
-
+import config from '../config';
+import {hashHistory} from 'react-router';
 export default Backbone.Collection.extend ({
   model: Artist,
 
@@ -17,15 +18,26 @@ $.ajax({
   },
   success: (response) => {
     let artist = new Artist(response);
-    console.log("this reference success", this)
+    // console.log("this reference success", this)
     this.add(artist);
   }
 });
 },
 
-vote(id) {
-  console.log("this reference vote", this)
-  let model = this.get(id);
-  artist.save('votes' , artist.get('votes') + 1, {wait: true});
+addVotes({name, photo, votes}){
+  this.create(
+    {name, photo, votes},
+    {headers: {
+      'application-id': config.appId,
+      'secret-key': config.secretKey,
+      'Content-Type':'application/json',
+      'application-type': 'REST'
+    },
+    url: 'https://api.backendless.com/v1/data/artists',
+    success: ()=>{
+      // hashHistory.push('/search');
+      console.log('voted!')
+    }
+  });
 }
 });

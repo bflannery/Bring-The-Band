@@ -4,7 +4,7 @@ import store from '../store';
 
 export default React.createClass ({
   render() {
-    console.log(this.props);
+
     return (
       <input type="button" onClick={this.handleVote} value={this.props.votes || 0}/>
 
@@ -12,7 +12,6 @@ export default React.createClass ({
   },
   handleVote(e) {
     e.preventDefault();
-    console.log('voted');
-    this.props.callback();
+    store.artists.addVote({name: this.props.name, image: this.props.votes.images[0].url, votes: 1});
   }
 });

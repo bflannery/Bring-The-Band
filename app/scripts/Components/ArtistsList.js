@@ -13,7 +13,7 @@ export default React.createClass({
   //
   // }  else {
     let artists = this.props.artists.map((artist, i, arr) => {
-    return <Artist key={i} artist={artist}/>;
+    return <Artist key={artist.id} artist={artist}/>;
 
   });
 // }

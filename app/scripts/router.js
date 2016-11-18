@@ -9,6 +9,7 @@ import Signup from './Components/Signup';
 import SearchPage from './Components/SearchPage';
 import Nav from './Components/Nav';
 import Login from './Components/Login';
+import VotesPage from './Components/VotesPage';
 
 
 const router = (
@@ -18,6 +19,7 @@ const router = (
       <Route path='/login' component={Login}/>
       <Route path='/register' component={Signup}/>
       <Route path='/search' component={SearchPage}/>
+      <Route path='/votes' component={VotesPage}/>
       </Route>
     </Router>
 
