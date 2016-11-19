@@ -10,20 +10,21 @@ export default React.createClass({
 
       if(!window.localStorage.userName) {
         nav = (
-          <nav>
+          <nav className="logged-out-nav-container">
             <Link to = "login">Log In</Link>
             <Link to = "register">Register</Link>
           </nav>
+
         )
       } else {
         nav = (
-          <div>
-          <nav>
-            <Link to = "votes">Votes</Link>
-            <Link to = "search">Search</Link>
+
+          <nav className = "logged-in-nav-container">
+            <Link to = "votes" className="votes-nav">Votes</Link>
+            <Link to = "search" className="search-nav">Search</Link>
+            <input type="button" className="logout-button" onClick={this.handleLogOut} value="log out"/>
           </nav>
-          <input type="button" onClick={this.handleLogOut} value="log out"/>
-          </div>
+
         )
       }
         return (

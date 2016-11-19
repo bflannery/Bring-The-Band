@@ -1,7 +1,9 @@
 import Session from './Models/session';
-import Artists from './Collections/Artists'
+import SearchArtists from './Collections/SearchArtists';
+import Votes from './Collections/Votes';
 
 export default {
   session: new Session(),
-  artists: new Artists()
+  artists: new SearchArtists(),
+  voted: new Votes()
 };

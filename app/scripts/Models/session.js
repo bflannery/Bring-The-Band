@@ -14,7 +14,8 @@ export default Backbone.Model.extend({
   defaults: {
     userName:'',
     email:'',
-    'user-token' : ''
+    'user-token' : '',
+    votedArtists: []
 
   },
 
@@ -56,7 +57,8 @@ export default Backbone.Model.extend({
       success:(response)=>{
         this.set(response);
         window.localStorage.setItem('user-token',response['user-token']);
-        window.localStorage.setItem('userName',response['userName']);
+        window.localStorage.setItem('userName',response.userName);
+        window.localStorage.setItem('ownerId',response.ownerId);
         hashHistory.push('/search');
       }
     });
@@ -77,5 +79,5 @@ export default Backbone.Model.extend({
         hashHistory.push('/');
       }
     })
-  }
+  },
 });

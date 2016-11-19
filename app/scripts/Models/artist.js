@@ -1,4 +1,4 @@
-// import {hashHistory} from 'react-router';
+
 import Backbone from 'backbone';
 
 

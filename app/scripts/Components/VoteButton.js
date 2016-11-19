@@ -11,7 +11,9 @@ export default React.createClass ({
     );
   },
   handleVote(e) {
+    console.log(this.props);
     e.preventDefault();
-    store.artists.addVote({name: this.props.name, image: this.props.votes.images[0].url, votes: 1});
+    store.voted.addVote({name: this.props.name, image: this.props.votes.images[0].url, votes: 1});
+
   }
 });

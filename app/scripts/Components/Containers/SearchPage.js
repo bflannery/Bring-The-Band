@@ -1,6 +1,6 @@
 import React from 'react';
-import store from '../store';
-import ArtistsList from './ArtistsList';
+import store from '../../store';
+import ArtistsList from '../ArtistsList';
 
 export default React.createClass({
 
@@ -22,12 +22,13 @@ export default React.createClass({
 
   render(){
     let artists = this.state.artists[0].artists.items;
+
       return(
 
-        <div className="search">
-          <form onSubmit={this.handleSubmit}>
+        <div className="search-container">
+          <form onSubmit={this.handleSubmit} className="search-form">
             <input id="search" type="text" placeholder="Search" className="search"/>
-            <input type="submit" value="search"/>
+            <input type="submit" value="search" className = "search-submit-button"/>
           </form>
           <ArtistsList artists={artists}/>
         </div>
@@ -35,7 +36,6 @@ export default React.createClass({
       );
     },
     handleSubmit(e){
-
       e.preventDefault();
       let artist = document.getElementById('search').value;
       store.artists.getArtists(artist);
