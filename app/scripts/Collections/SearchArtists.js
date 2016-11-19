@@ -30,12 +30,6 @@ addVotes({name, photo, votes}){
   $.ajax({
 
     type:'POST',
-    headers: {
-      'application-id': config.appId,
-      'secret-key': config.secretKey,
-      'Content-Type':'application/json',
-      'application-type': 'REST'
-    },
     url: 'https://api.backendless.com/v1/data/artists',
     contentType: 'application/json',
     data: JSON.stringify({name, photo, votes}),

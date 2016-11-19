@@ -28,11 +28,6 @@ export default Backbone.Model.extend({
   register(userName, email, password){
     $.ajax({
       type: 'POST',
-      headers: {
-        'application-id': config.appId,
-        'secret-key': config.secretKey,
-        'application-type': 'REST'
-      },
       url: 'https://api.backendless.com/v1/users/register',
       contentType: 'application/json',
       data: JSON.stringify({userName, email, password}),
@@ -46,11 +41,6 @@ export default Backbone.Model.extend({
   login(userName, password){
     $.ajax({
       type:'POST',
-      headers: {
-        'application-id': config.appId,
-        'secret-key': config.secretKey,
-        'application-type': 'REST'
-      },
       url:'https://api.backendless.com/v1/users/login',
       contentType:'application/json',
       data:JSON.stringify({login: userName , password}),
@@ -66,11 +56,6 @@ export default Backbone.Model.extend({
 
   logout(){
     $.ajax({
-      headers: {
-        'application-id': config.appId,
-        'secret-key': config.secretKey,
-        'application-type': 'REST'
-      },
       contentType:'application/json',
       url:'https://api.backendless.com/v1/users/logout',
       success:()=>{
