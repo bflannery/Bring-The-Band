@@ -17,12 +17,11 @@ export default React.createClass({
     }
 
     return (
-    <div>
-      <h3> Artist Votes </h3>
-      <ul>
+    
+      <ul className = "votes-artists-list">
         {votes}
       </ul>
-      </div>
+
     );
   }
 });

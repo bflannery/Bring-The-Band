@@ -29,7 +29,8 @@ export default React.createClass({
   render(){
 
     return (
-      <div>
+      <div className = "votes-container">
+        <h3> Artist Votes </h3>
         <VotesList votedArtists={this.state.voted}/>
       </div>
     );
