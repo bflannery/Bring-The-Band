@@ -4,11 +4,9 @@ import $ from 'jquery';
 
 
 import config from './config';
-// import App from './Components/Containers/App';
 import Signup from './Components/Signup';
 import SearchPage from './Components/Containers/SearchPage';
-import Nav from './Components/Nav';
-import Login from './Components/Login';
+import LandingPage from './Components/Containers/LandingPage';
 import VotesPage from './Components/Containers/VotesPage';
 
 
@@ -30,12 +28,11 @@ $(document).ajaxSend((evt, xhr, opts) => {
 const router = (
 
     <Router history={hashHistory}>
-      <Route path='/' component={Nav}>
-      <Route path='/login' component={Login}/>
+      <Route path='/' component={LandingPage}/>
       <Route path='/register' component={Signup}/>
       <Route path='/search' component={SearchPage}/>
       <Route path='/votes' component={VotesPage}/>
-      </Route>
+
     </Router>
 
 );

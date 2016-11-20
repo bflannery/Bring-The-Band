@@ -3,7 +3,7 @@ import config from '../config';
 
 export default Backbone.Model.extend({
 
-  idAttribute: 'objectId',
+  idAttribute: 'id',
   defaults: {
     name: '',
     photo: '',

@@ -4,6 +4,7 @@ import ArtistVote from './VoteArtist';
 export default React.createClass({
 
   render() {
+    console.log(this.props)
 
     let votes;
 
@@ -17,7 +18,7 @@ export default React.createClass({
     }
 
     return (
-    
+
       <ul className = "votes-artists-list">
         {votes}
       </ul>

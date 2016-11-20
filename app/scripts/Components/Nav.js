@@ -11,7 +11,7 @@ export default React.createClass({
       if(!window.localStorage.userName) {
         nav = (
           <nav className="logged-out-nav-container">
-            <Link to = "login">Log In</Link>
+            <Link to = "/">Log In</Link>
             <Link to = "register">Register</Link>
           </nav>
 
@@ -30,13 +30,11 @@ export default React.createClass({
         return (
           <div>
               {nav}
-              {this.props.children}
           </div>
       );
     },
-
-    handleLogOut (e) {
-      e.preventDefault
+    handleLogOut(e) {
+      e.preventDefault();
       store.session.logout();
     }
 });

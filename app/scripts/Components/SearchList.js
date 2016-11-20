@@ -1,21 +1,22 @@
 import React from 'react';
-import Artist from './Artist';
+import SearchArtist from './SearchArtist';
 
 export default React.createClass({
 
   render() {
-      let artists;
+
+  let artists;
 
   if(this.props.artists.length < 1){
     artists = <li className="empty-search-list"> No Search Results</li>;
 
-  }  else {
+  } else {
+
     artists = this.props.artists.map((artist, i, arr) => {
-    return <Artist key={artist.id} artist={artist}/>;
+    return <SearchArtist key={artist.id} artist={artist}/>;
 
   });
 }
-
 
   return (
     <div className = "search-artist-container">

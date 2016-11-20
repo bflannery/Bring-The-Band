@@ -1,22 +1,15 @@
 import React from 'react';
 import {Link} from 'react-router';
 import store from '../store';
+import Header from './Header';
 
 export default React.createClass({
-  getInitialState(){
-    return {
-      session: store.session.toJSON()
-    }
-  },
-  componentWillMount(){
-      store.session.on('change', ( )=> {
-      this.setState({session: store.session.toJSON()})
-    });
-  },
+
   render(){
-    
+
     return (
       <div>
+        <Header />
         <form className="signup-form">
           <input className="userName" type="text" placeholder="Username"/>
           <input className="email" type="email" placeholder="Email"/>

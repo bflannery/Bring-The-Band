@@ -1,18 +1,18 @@
 import React from 'react';
 import store from '../../store';
-import ArtistsList from '../ArtistsList';
+import SearchList from '../SearchList';
+import Header from '../Header';
 
 export default React.createClass({
 
   getInitialState(){
     return {
       session: store.session.toJSON(),
-      artists: [{artists:{items: []}}]
+      artists: store.artists.toJSON()
     }
   },
   componentDidMount(){
     store.session.on('change update', ()=> {
-
     });
     store.artists.on('change update', () => {
       this.setState({artists: store.artists.toJSON()})
@@ -21,16 +21,16 @@ export default React.createClass({
   },
 
   render(){
-    let artists = this.state.artists[0].artists.items;
-
       return(
 
         <div className="search-container">
+        <Header />
+        <h3> Search Artists </h3>
           <form onSubmit={this.handleSubmit} className="search-form">
             <input id="search" type="text" placeholder="Search" className="search"/>
             <input type="submit" value="search" className = "search-submit-button"/>
           </form>
-          <ArtistsList artists={artists}/>
+          <SearchList artists={this.state.artists}/>
         </div>
 
       );

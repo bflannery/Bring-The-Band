@@ -6,11 +6,14 @@ export default React.createClass({
 
 
   render () {
-    console.log(this.props);
+
     return (
       <li className ="votes-artist-container">
+
         <span className="artist-name"> {this.props.votedArtist.name}</span>
+        <img src= {this.props.votedArtist.image} width="100" height="100"/>
       </li>
+
     );
 }
 });

@@ -18,23 +18,31 @@ $.ajax({
     q: artist,
     type: 'artist'
   },
-  success: (response) => {
+  success: (data) => {
+
     this.reset();
-    let artist = new Artist(response);
-    this.add(artist);
+    let artistInfo = data.artists.items.forEach((data,i,arr) => {
+      if(data.images[0]) {
+        this.add({
+          id: data.id,
+          type: data.artist,
+          name: data.name,
+          image: data.images[0].url,
+        });
+      }
+    });
   }
 });
 },
 
-addVotes({name, photo, votes}){
+addVotes({name, image, id, votes}){
   $.ajax({
 
     type:'POST',
     url: 'https://api.backendless.com/v1/data/artists',
     contentType: 'application/json',
-    data: JSON.stringify({name, photo, votes}),
+    data: JSON.stringify({name, image, id, votes}),
     success: ()=>{
-      // hashHistory.push('/search');
       console.log('voted!')
     }
   });

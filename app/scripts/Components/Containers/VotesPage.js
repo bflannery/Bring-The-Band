@@ -3,6 +3,7 @@ import React from 'react';
 import store from '../../store';
 
 import VotesList from '../VotesList';
+import Header from '../Header';
 
 export default React.createClass({
 
@@ -30,6 +31,7 @@ export default React.createClass({
 
     return (
       <div className = "votes-container">
+        <Header />
         <h3> Artist Votes </h3>
         <VotesList votedArtists={this.state.voted}/>
       </div>
