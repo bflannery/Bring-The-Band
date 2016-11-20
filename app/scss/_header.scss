@@ -1,0 +1,33 @@
+.header {
+  background: black;
+  color: white;
+    h2 {
+    display: inline-block;
+    margin-left: 1.5rem;
+  }
+
+  .nav-container {
+    display: inline-block;
+    float: right;
+    margin-top: .4rem;
+    margin-right: 1.5rem;
+
+      ul {
+        display: inline-block;
+            li {
+              display: inline-block;
+              a {
+                text-decoration: none;
+              }
+                a:visited {
+                    color:white;
+
+                }
+            }
+      }
+  }
+
+  .nav-list {
+    margin: .2rem;
+  }
+}

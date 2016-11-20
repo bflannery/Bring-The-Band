@@ -10,27 +10,33 @@ export default React.createClass({
 
       if(!window.localStorage.userName) {
         nav = (
-          <nav className="logged-out-nav-container">
-            <Link to = "/">Log In</Link>
-            <Link to = "register">Register</Link>
-          </nav>
+          <ul className="logged-out-nav-container">
+            <li className="nav-list"><Link to = "/" className="login">Log In</Link></li>
+            <li className="nav-list"><Link to = "register" className="signup">Sign Up</Link></li>
+          </ul>
 
         )
       } else {
         nav = (
 
-          <nav className = "logged-in-nav-container">
-            <Link to = "votes" className="votes-nav">Votes</Link>
+          <ul className = "logged-in-nav-container">
+            <li className="nav-list">
+              <Link to = "votes" className="votes-nav">Votes</Link>
+              </li>
+            <li className="nav-list">
             <Link to = "search" className="search-nav">Search</Link>
+            </li>
+            <li className="nav-list">
             <input type="button" className="logout-button" onClick={this.handleLogOut} value="log out"/>
-          </nav>
+            </li>
+          </ul>
 
         )
       }
         return (
-          <div>
+          <nav className = "nav-container">
               {nav}
-          </div>
+          </nav>
       );
     },
     handleLogOut(e) {
