@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 import store from '../store';
-import Header from './Header';
+
 
 export default React.createClass({
 
@@ -9,7 +9,6 @@ export default React.createClass({
 
     return (
       <div>
-        <Header />
         <form className="signup-form">
           <input className="userName" type="text" placeholder="Username"/>
           <input className="email" type="email" placeholder="Email"/>

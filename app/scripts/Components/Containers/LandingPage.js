@@ -22,7 +22,6 @@ export default React.createClass ({
 
     return (
       <div className="landing-page">
-      <Header />
       <div className="main-container">
       <Login session={this.state.session} />
       </div>
