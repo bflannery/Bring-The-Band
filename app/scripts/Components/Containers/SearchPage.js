@@ -27,8 +27,8 @@ export default React.createClass({
         <Header />
         <h3> Search Artists </h3>
           <form onSubmit={this.handleSubmit} className="search-form">
-            <input id="search" type="text" placeholder="Search" className="search"/>
-            <input type="submit" value="search" className = "search-submit-button"/>
+            <input id="search" type="text" placeholder="Search Artist" className="search"/>
+            <input type="submit" value="Search" className = "search-submit-button"/>
           </form>
           <SearchList artists={this.state.artists}/>
         </div>

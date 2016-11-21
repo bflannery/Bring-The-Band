@@ -21,9 +21,11 @@ export default React.createClass ({
   render () {
 
     return (
-      <div>
+      <div className="landing-page">
       <Header />
+      <div className="main-container">
       <Login session={this.state.session} />
+      </div>
       </div>
     );
   },

@@ -1,6 +1,6 @@
 .header {
-  background: black;
-  color: white;
+  background: #193441;
+  color: #D1DBBD;
     h2 {
     display: inline-block;
     margin-left: 1.5rem;
@@ -14,13 +14,17 @@
 
       ul {
         display: inline-block;
+        margin-top: .4rem;
             li {
               display: inline-block;
+              background: #3E606F;
+              padding: .5rem;
+              border-radius: 10px;
               a {
                 text-decoration: none;
               }
                 a:visited {
-                    color:white;
+                    color: #D1DBBD;
 
                 }
             }
@@ -30,4 +34,12 @@
   .nav-list {
     margin: .2rem;
   }
+}
+
+.logout-button {
+  background: transparent;
+border: none;
+color: #D1DBBD;
+font-size: .8rem;
+padding: 0;
 }

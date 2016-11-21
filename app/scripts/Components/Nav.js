@@ -27,7 +27,7 @@ export default React.createClass({
             <Link to = "search" className="search-nav">Search</Link>
             </li>
             <li className="nav-list">
-            <input type="button" className="logout-button" onClick={this.handleLogOut} value="log out"/>
+            <input type="button" className="logout-button" onClick={this.handleLogOut} value="Log Out"/>
             </li>
           </ul>
 

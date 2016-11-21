@@ -11,7 +11,7 @@ export default React.createClass({
       <li className ="votes-artist-container">
 
         <span className="artist-name"> {this.props.votedArtist.name}</span>
-        <img src= {this.props.votedArtist.image} width="100" height="100"/>
+        <img src= {this.props.votedArtist.image} width="100" height="100" className ="votes-artist-image"/>
       </li>
 
     );
