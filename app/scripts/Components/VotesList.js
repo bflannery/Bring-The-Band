@@ -4,7 +4,7 @@ import ArtistVote from './VoteArtist';
 export default React.createClass({
 
   render() {
-    console.log(this.props)
+
 
     let votes;
 
@@ -13,7 +13,7 @@ export default React.createClass({
 
     } else {
       votes = this.props.votedArtists.map((votedArtist, i ,arr) => {
-        return <ArtistVote key={votedArtist.id} votedArtist={votedArtist}/>;
+        return <ArtistVote key={i} votedArtist={votedArtist}/>;
       });
     }
 

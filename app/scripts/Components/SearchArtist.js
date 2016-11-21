@@ -2,6 +2,8 @@ import React from 'react';
 
 import store from '../store';
 
+import Votes from './Votes'
+
 
 export default React.createClass({
 
@@ -13,17 +15,9 @@ export default React.createClass({
       <li className ="search-artist-container">
         <span className="artist-name"> {this.props.artist.name}</span>
         <img src= {this.props.artist.image} width="100" height="100" className="search-artist-image"/>
-        <input onClick={this.handleClick} type="button" value="vote"/>
+        <Votes artist={this.props.artist}/>
       </li>
     );
   },
-  handleClick(){
-      store.artists.addVotes({
-        name: this.props.artist.name,
-        image: this.props.artist.image,
-        id: this.props.artist.id,
-        userID: this.session.ownerId,
-        votes: 1});
 
-    }
 });

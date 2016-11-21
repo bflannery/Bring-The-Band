@@ -9,8 +9,7 @@ export default React.createClass({
 
   getInitialState(){
     return {
-      session: store.session.toJSON(),
-      voted: store.voted.toJSON(),
+      voted: store.voted.toJSON()
     }
   },
   componentWillMount(){
@@ -18,15 +17,12 @@ export default React.createClass({
   },
 
   componentDidMount () {
-    store.session.on('change update' , ()=> {
-      this.setState({voted: store.session.toJSON()})
-    });
     store.voted.fetch();
-    store.voted.on('change update', () =>{
-      this.setState({voted: store.voted.toJSON()})
-    });
+    store.voted.on('update change', this.updateStatus);
+  },
+  componentWillUnmount() {
+    store.voted.off('update change', this.updateStatus);
 },
-
   render(){
 
     return (
@@ -37,4 +33,8 @@ export default React.createClass({
       </div>
     );
   },
+
+  updateStatus(){
+    this.setState({voted: store.voted.toJSON()})
+  }
 });

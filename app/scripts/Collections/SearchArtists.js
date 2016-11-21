@@ -31,18 +31,6 @@ $.ajax({
     });
   }
 });
-},
-
-addVotes({name, image, id, votes}){
-  $.ajax({
-
-    type:'POST',
-    url: 'https://api.backendless.com/v1/data/artists',
-    contentType: 'application/json',
-    data: JSON.stringify({name, image, id, votes}),
-    success: ()=>{
-      console.log('voted!')
-    }
-  });
 }
+
 });
