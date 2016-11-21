@@ -9,6 +9,7 @@ export default React.createClass({
   render () {
 
     return (
+
       <li className ="search-artist-container">
         <span className="artist-name"> {this.props.artist.name}</span>
         <img src= {this.props.artist.image} width="100" height="100" className="search-artist-image"/>
@@ -17,7 +18,12 @@ export default React.createClass({
     );
   },
   handleClick(){
-      store.artists.addVotes({name: this.props.artist.name, image: this.props.artist.image, id: this.props.artist.id, votes: 1});
+      store.artists.addVotes({
+        name: this.props.artist.name,
+        image: this.props.artist.image,
+        id: this.props.artist.id,
+        userID: this.session.ownerId,
+        votes: 1});
 
     }
 });

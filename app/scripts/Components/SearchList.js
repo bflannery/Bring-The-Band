@@ -4,7 +4,6 @@ import SearchArtist from './SearchArtist';
 export default React.createClass({
 
   render() {
-
   let artists;
 
   if(this.props.artists.length < 1){

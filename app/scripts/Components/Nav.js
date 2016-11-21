@@ -4,21 +4,25 @@ import store from '../store';
 
 
 export default React.createClass({
+
+    getInitialState(){
+      return { authenticated: store.session.get('authenticated')}
+    },
+    componentWillMount() {
+      store.session.on('change', () => {
+        this.setState({authenticated: store.session.get('authenticated')});
+      });
+    },
+
     render() {
 
-      let nav;
+      let nav = <ul className="logged-out-nav-container">
+        <li className="nav-list"><Link to = "/" className="login">Log In</Link></li>
+        <li className="nav-list"><Link to = "register" className="signup">Sign Up</Link></li>
+      </ul>;
 
-      if(!window.localStorage.userName) {
+      if(this.state.authenticated) {
         nav = (
-          <ul className="logged-out-nav-container">
-            <li className="nav-list"><Link to = "/" className="login">Log In</Link></li>
-            <li className="nav-list"><Link to = "register" className="signup">Sign Up</Link></li>
-          </ul>
-
-        )
-      } else {
-        nav = (
-
           <ul className = "logged-in-nav-container">
             <li className="nav-list">
               <Link to = "votes" className="votes-nav">Votes</Link>

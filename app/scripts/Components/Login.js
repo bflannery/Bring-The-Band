@@ -8,10 +8,10 @@ export default React.createClass ({
 
     return (
       <div className="login-form-container">
-      <form className="login-form">
-        <input className="login-container" id="userName-login" type="name" placeholder="Username"/>
-        <input className="login-container" id="userName-password" type="password" placeholder="Password"/>
-        <input onClick={this.handleSubmit} type="submit" value="Login"/>
+      <form onSubmit={this.handleSubmit} className="login-form" >
+        <input className="login-container" ref="login" id="userName-login" type="name" placeholder="Username"/>
+        <input className="login-container" ref="password" id="userName-password" type="password" placeholder="Password"/>
+        <input type="submit" value="Login"/>
       </form>
       Not a Member?  <Link to="/register">Signup Here!</Link>
       </div>
@@ -19,8 +19,8 @@ export default React.createClass ({
   },
   handleSubmit(e){
     e.preventDefault();
-    const userName = document.getElementById('userName-login').value;
-    const password = document.getElementById('userName-password').value;
+    const userName = this.refs.login.value;
+    const password = this.refs.password.value;
     store.session.login(userName, password);
   }
 })

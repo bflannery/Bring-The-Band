@@ -7,6 +7,4 @@ export default Backbone.Model.extend({
     defaults: {
     votes: 0
   },
-
-
 });

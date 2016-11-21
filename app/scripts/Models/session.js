@@ -7,7 +7,7 @@ export default Backbone.Model.extend({
 
   initialize() {
          if (window.localStorage.getItem('user-token')) {
-             this.set('user-token', window.localStorage.getItem('user-token'));
+             this.set({authenticated: true, 'user-token': window.localStorage.getItem('user-token')});
          }
 },
   idAttribute: 'objectId',
@@ -15,7 +15,8 @@ export default Backbone.Model.extend({
     userName:'',
     email:'',
     'user-token' : '',
-    votedArtists: []
+    votedArtists: [],
+    authenticated: false
 
   },
 
@@ -45,11 +46,14 @@ export default Backbone.Model.extend({
       contentType:'application/json',
       data:JSON.stringify({login: userName , password}),
       success:(response)=>{
-        this.set(response);
-        window.localStorage.setItem('user-token',response['user-token']);
-        window.localStorage.setItem('userName',response.userName);
-        window.localStorage.setItem('ownerId',response.ownerId);
-        hashHistory.push('/search');
+        this.set({
+          authenticated: true,
+          });
+
+          window.localStorage.setItem('user-token',response['user-token']);
+          window.localStorage.setItem('userName',response.userName);
+          window.localStorage.setItem('ownerId',response.ownerId);
+          hashHistory.push('/search');
       }
     });
   },

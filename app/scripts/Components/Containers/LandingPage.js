@@ -28,10 +28,4 @@ export default React.createClass ({
       </div>
     );
   },
-  handleSubmit(e){
-    e.preventDefault();
-    const userName = document.querySelector('.userName-login').value;
-    const password = document.querySelector('.password-login').value;
-    store.session.login(userName, password);
-  }
-  })
+});

@@ -14,8 +14,9 @@ export default React.createClass({
   componentDidMount(){
     store.session.on('change update', ()=> {
     });
+
     store.artists.on('change update', () => {
-      this.setState({artists: store.artists.toJSON()})
+    this.setState({artists: store.artists.toJSON()})
 
     });
   },
@@ -24,10 +25,10 @@ export default React.createClass({
       return(
 
         <div className="search-container">
-      
+
         <h3> Search Artists </h3>
           <form onSubmit={this.handleSubmit} className="search-form">
-            <input id="search" type="text" placeholder="Search Artist" className="search"/>
+            <input id="search" ref="search" type="text" placeholder="Search Artist" className="search"/>
             <input type="submit" value="Search" className = "search-submit-button"/>
           </form>
           <SearchList artists={this.state.artists}/>
@@ -37,7 +38,7 @@ export default React.createClass({
     },
     handleSubmit(e){
       e.preventDefault();
-      let artist = document.getElementById('search').value;
+      let artist = this.refs.search.value;
       store.artists.getArtists(artist);
     }
   });

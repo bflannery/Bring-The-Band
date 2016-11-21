@@ -19,13 +19,11 @@ $.ajax({
     type: 'artist'
   },
   success: (data) => {
-
     this.reset();
     let artistInfo = data.artists.items.forEach((data,i,arr) => {
       if(data.images[0]) {
         this.add({
           id: data.id,
-          type: data.artist,
           name: data.name,
           image: data.images[0].url,
         });
