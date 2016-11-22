@@ -3,8 +3,7 @@ import React from 'react';
 import store from '../../store';
 
 import Login from '../Login';
-import Header from '../Header';
-
+ 
 export default React.createClass ({
 
   getInitialState(){

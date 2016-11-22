@@ -23,15 +23,16 @@ export default React.createClass({
 
   render(){
       return(
+        <div className="main-container">
+          <div className="search-container">
 
-        <div className="search-container">
-
-        <h3> Search Artists </h3>
-          <form onSubmit={this.handleSubmit} className="search-form">
-            <input id="search" ref="search" type="text" placeholder="Search Artist" className="search"/>
-            <input type="submit" value="Search" className = "search-submit-button"/>
-          </form>
+          <h3> Search Artists </h3>
+            <form onSubmit={this.handleSubmit} className="search-form">
+              <input id="search" ref="search" type="text" placeholder="Search Artist" className="search"/>
+              <input type="submit" value="Search" className = "search-submit-button"/>
+              </form>
           <SearchList artists={this.state.artists}/>
+          </div>
         </div>
 
       );

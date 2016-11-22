@@ -8,15 +8,16 @@ export default React.createClass({
   render(){
 
     return (
-      <div>
-        <form onSubmit={this.handleSubmit} className="signup-form">
-          <input className="userName" ref="userName" type="text" placeholder="Username"/>
-          <input className="email" ref="email" type="email" placeholder="Email"/>
-          <input className="password" ref="password" type="password" placeholder="Password"/>
-          <input className="confirmPassword"  ref="confirmPassword" type="password" placeholder="Confrim Password"/>
+      <div className="main-container">
+        <form onSubmit={this.handleSubmit} className="signup-form-container">
+          <input className="signup-container" ref="userName" type="text" placeholder="Username"/>
+          <input className="signup-container" ref="email" type="email" placeholder="Email"/>
+          <input className="signup-container" ref="password" type="password" placeholder="Password"/>
+          <input className="signup-container"  ref="confirmPassword" type="password" placeholder="Confrim Password"/>
           <input  type="submit" value="submit"/>
+          <span className="login-link">Already a Member? <Link to="/">Login Here!</Link></span>
         </form>
-        Already a Member? <Link to="/">Login Here!</Link>
+
       </div>
     );
   },
