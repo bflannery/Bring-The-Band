@@ -18,7 +18,7 @@ describe('vote model', () => {
       expect(vote).to.be.an.instanceof(Backbone.Model);
   });
 
-  it('should be a function (because it\'s a constructor)', () => {
+  it('should be a function' () => {
       expect(Vote).to.be.a('function');
   });
 
