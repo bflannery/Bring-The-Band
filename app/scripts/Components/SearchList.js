@@ -19,14 +19,13 @@ export default React.createClass({
 
   return (
 
-    <div>
-      <h3> Search Results</h3>
-      <div className= "search-artist-container">
+    <div className="search-list-container">
+
         <ul className="search-artist-list">
             {artists}
         </ul>
       </div>
-    </div>
+
   );
 }
 });

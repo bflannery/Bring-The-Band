@@ -25,8 +25,6 @@ export default React.createClass({
       return(
         <div className="main-container">
           <div className="search-container">
-
-          <h3> Search Artists </h3>
             <div className="search-form-container">
             <form onSubmit={this.handleSubmit} className="search-form">
               <input id="search" ref="search" type="text" placeholder="Search Artist" className="search"/>

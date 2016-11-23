@@ -4,6 +4,7 @@ padding: 1rem 10rem 1rem 1rem;
 border-radius: 10px;
 color: #D1DBBD;
 font-size: 1.2rem;
+border: 4px solid green;
 }
 
 .search-submit-button {
@@ -58,4 +59,9 @@ background: black;
 padding: 2rem 9rem;
 border-radius: 10px;
 opacity: .8;
+}
+
+.search-container {
+  margin-top: 4rem;
+
 }
