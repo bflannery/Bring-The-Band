@@ -1,4 +1,4 @@
-# Bring the Bands!
+# Bring the Band
 This is a website to help music venues bring bands to their venue. Members vote on bands that they would like to come to the venue.
 
 ## Features
