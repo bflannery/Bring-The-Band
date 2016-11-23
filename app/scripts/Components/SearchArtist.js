@@ -18,6 +18,5 @@ export default React.createClass({
         <Votes artist={this.props.artist}/>
       </li>
     );
-  },
-
+}
 });

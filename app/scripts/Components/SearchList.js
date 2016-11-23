@@ -7,7 +7,7 @@ export default React.createClass({
   let artists;
 
   if(this.props.artists.length < 1){
-    artists = <li className="empty-search-list"> No Search Results</li>;
+    artists = <li className="empty-search-list"></li>;
 
   } else {
 
@@ -18,12 +18,15 @@ export default React.createClass({
 }
 
   return (
-    <div className = "search-artist-container">
+
+    <div>
       <h3> Search Results</h3>
-      <ul className="search-artist-list">
-        {artists}
-      </ul>
+      <div className= "search-artist-container">
+        <ul className="search-artist-list">
+            {artists}
+        </ul>
       </div>
+    </div>
   );
 }
 });

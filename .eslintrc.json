@@ -15,7 +15,7 @@
     "plugins": [
         "react"
     ],
-    
+
     "globals": {
     			"describe": true,
     			"it": true,

@@ -1,10 +1,17 @@
+body {
+  position: relative;
+  margin: 0;
+
+  min-height: 100%;
+}
+
 .page-container {
-  background: url('../../assets/images/banner.jpeg')no-repeat center center;
+  background: url('../../assets/images/banner.jpeg')no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 55.5rem;
+  height: 60rem;
 }
 
 li {

@@ -7,7 +7,7 @@ export default React.createClass({
     console.log(this.props)
 
     return (
-      <input onClick={this.handleClick} type="button" value="Vote"/>
+      <input onClick={this.handleClick} type="submit"  value="Vote"/>
     );
   },
 
@@ -18,5 +18,8 @@ export default React.createClass({
           id: this.props.artist.id
         });
 
+
+
       }
+
 });
