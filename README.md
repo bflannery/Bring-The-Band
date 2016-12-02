@@ -1,8 +1,8 @@
 # Bring the Band
 This is a website to help music venues bring bands to their venue. Members vote on bands that they would like to come to the venue.
 
-# Live Site
-[Beat The Bands](https://shannonriester.github.io/Beat-The-Bands-day-38/#/?_k=8dt3mz)
+## Live Site
+ - http://bring-the-band-tiy.surge.sh/#/
 
 ## Build Tools with NPM scripts
   - JavaScript
@@ -35,17 +35,14 @@ This is a website to help music venues bring bands to their venue. Members vote 
   - **Searching**:
     - Search field queries Spotify's API for bands/artists
     - Results of the Spotify search are displayed as a list of bands.
-    - User can click on individual band image and are brought to a modal view of additional information on the band/artist
+    - User can click on individual band vote button for who they want to see
   - **Voting**:
-    - If user votes on band, the vote is toggled (users cannot vote more than once on a single band)
-    - If a user has already voted for a band, display a "voted" badge instead of the "vote for" button.
-    - Voted page (results) are ordered from greatest amount of votes to least
-    - Keeping track of votes in a separate collection on kinvey ( use a 'join table' ).
+    - If user votes on band, the vote is store and the band can no longer be voted for 
+    - Keeping track of votes in a separate collection on Backendless
   - **Login/signup functionality**:
     - User is able to login and access voting features
-    - Users can sign up, and are registered on the backend, via Kinvey
-  - **Anonymous login**
-    - Automatically log in new users with an 'annonymous' account when they arrive at the site, allowing you to keep track of their behavior and let them view votes, but NOT allowing them to vote until they officially sign up.
+    - Users can sign up, and are registered on the backend, via Backendless
+
 
 ## Installation
 - Clone this repo (or fork then clone, if you prefer)
