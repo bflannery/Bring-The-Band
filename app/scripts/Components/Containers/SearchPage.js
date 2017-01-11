@@ -23,7 +23,7 @@ export default React.createClass({
 
   render(){
       return(
-        <div className="main-container">
+        <div className="search-page">
           <div className="search-container">
             <div className="search-form-container">
             <form onSubmit={this.handleSubmit} className="search-form">

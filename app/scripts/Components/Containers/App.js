@@ -9,7 +9,7 @@ export default React.createClass({
       <div className="page-container">
       <Header />
       {this.props.children}
-      <Footer />
+
       </div>
 
     )

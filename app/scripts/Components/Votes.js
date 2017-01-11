@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { hashHistory} from 'react-router';
 import store from '../store';
 
 export default React.createClass({
@@ -17,7 +17,7 @@ export default React.createClass({
           image: this.props.artist.image,
           id: this.props.artist.id
         });
-
+        hashHistory.push('/votes');
 
 
       }

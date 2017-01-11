@@ -3,7 +3,7 @@ import React from 'react';
 import store from '../../store';
 
 import Login from '../Login';
- 
+
 export default React.createClass ({
 
   getInitialState(){
@@ -21,10 +21,9 @@ export default React.createClass ({
 
     return (
       <div className="landing-page">
-      <div className="main-container">
       <Login session={this.state.session} />
       </div>
-      </div>
+
     );
   },
 });

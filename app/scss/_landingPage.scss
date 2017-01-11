@@ -1,8 +1,11 @@
-.main-container {
+.landing-page {
   text-align: center;
-  height: 44.2rem;
-  overflow: overlay;
-  
+  background: url('../../assets/images/banner.jpeg')no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 60rem;
 }
 
 
@@ -13,10 +16,7 @@
   padding: 10rem 5rem;
   text-align: center;
   display: inline-block;
-  margin-bottom: 9rem;
-margin-top: 15rem;
-
-
+  margin: 9rem;
 }
 
 .login-container {
@@ -55,7 +55,10 @@ input[type="submit"]{
 
     }
 }
+.register-page {
+  text-align: center;
 
+}
 .signup-form-container {
   background: black;
   opacity: .8;
@@ -63,8 +66,7 @@ input[type="submit"]{
   padding: 8rem 5rem;
   text-align: center;
   display: inline-block;
-  margin-bottom: 9rem;
-  margin-top: 7rem;
+  margin: 8rem;
 
 }
 

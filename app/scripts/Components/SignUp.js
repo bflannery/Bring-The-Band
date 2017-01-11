@@ -8,7 +8,7 @@ export default React.createClass({
   render(){
 
     return (
-      <div className="main-container">
+      <div className="register-page">
         <form onSubmit={this.handleSubmit} className="signup-form-container">
           <input className="signup-container" ref="userName" type="text" placeholder="Username"/>
           <input className="signup-container" ref="email" type="email" placeholder="Email"/>
