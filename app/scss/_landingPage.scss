@@ -1,0 +1,94 @@
+.main-container {
+  text-align: center;
+  height: 44.2rem;
+  overflow: overlay;
+  
+}
+
+
+.login-form-container {
+  background: black;
+  opacity: .8;
+  border-radius: 10px;
+  padding: 10rem 5rem;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 9rem;
+margin-top: 15rem;
+
+
+}
+
+.login-container {
+  background: transparent;
+  color: white;
+  display: block;
+  padding: .5rem 1rem;
+  border: .3rem solid green;
+  border-radius: 10px;
+  margin: 0 auto;
+  text-align: center;
+  margin: .3rem;
+
+    input[type="text"] {
+      color: white;
+
+    }
+
+}
+
+input[type="submit"]{
+  background: transparent;
+      color: white;
+      text-align: left;
+      display: block;
+      padding: 0.5rem 4rem;
+      border: .3rem solid green;
+      border-radius: 10px;
+      }
+
+.register-link {
+  color: white;
+  font-size: .7rem;
+    a:visited{
+      color: white;
+
+    }
+}
+
+.signup-form-container {
+  background: black;
+  opacity: .8;
+  border-radius: 10px;
+  padding: 8rem 5rem;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 9rem;
+  margin-top: 7rem;
+
+}
+
+.signup-container {
+  background: transparent;
+  color: white;
+  display: block;
+  padding: .5rem 1.3rem .5rem 1rem;
+  border: .3rem solid green;
+  border-radius: 10px;
+  margin: 0 auto;
+  text-align: center;
+  margin: .3rem 0;
+
+
+
+}
+
+
+.login-link {
+  color: white;
+  font-size: .7rem;
+    a:visited{
+      color: white;
+
+    }
+}
